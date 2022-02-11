@@ -32,12 +32,12 @@ resource "google_storage_bucket" "cs_instagram-01" {
   location      = "EU"
 }
 resource "google_storage_bucket_object" "Brutes" {
-  display_name  = "Brutes"
+  name          = "Brutes"
   bucket        = "${google_storage_bucket.cs_instagram-01.name}"
 }
 
 # Folder nested under another folder.
 resource "google_storage_bucket_object" "Raffines" {
-  display_name = "Raffines"
-  bucket       = "${google_storage_bucket.cs_instagram-01.name}"
+  name          = "Raffines"
+  bucket        = "${google_storage_bucket.cs_instagram-01.name}"
 }
