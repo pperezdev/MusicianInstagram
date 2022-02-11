@@ -29,7 +29,7 @@ resource "google_compute_network" "vpc_network" {
 
 resource "google_storage_bucket" "cs_instagram-01" {
   name          = "cs_instagram-01"
-    
+  location      = "EU"
 }
 resource "google_folder" "Brutes" {
   display_name = "Brutes"
