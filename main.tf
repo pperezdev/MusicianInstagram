@@ -26,3 +26,18 @@ resource "google_compute_network" "vpc_network" {
   name                    = "terraform-network"
   auto_create_subnetworks = "true"
 }
+
+resource "google_storage_bucket" "cs_instagram-01" {
+  name          = "cs_instagram-01"
+    
+}
+resource "google_folder" "Brutes" {
+  display_name = "Brutes"
+  parent       = google_storage_bucket.cs_instagram-01
+}
+
+# Folder nested under another folder.
+resource "google_folder" "Raffines" {
+  display_name = "Raffines"
+  parent       = google_storage_bucket.cs_instagram-01
+}
