@@ -1,12 +1,12 @@
 provider "google" {
   project     = "instagram-analytics-341015"
+  region      = "europe-west1"
+  zone        = "europe-west1-c"
 }
 
 resource "google_compute_instance" "vm_instance" {
   name         = "terraform-instance"
   machine_type = "f1-micro"
-#   region      = "europe-west1"
-  zone        = "europe-west1-c"
 
   boot_disk {
     initialize_params {
@@ -16,7 +16,7 @@ resource "google_compute_instance" "vm_instance" {
 
   network_interface {
     # A default network is created for all GCP projects
-    network = "google_compute_network.vpc_network.self_link"
+    network = google_compute_network.vpc_network.self_link
     access_config {
     }
   }
