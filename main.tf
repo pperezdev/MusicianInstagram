@@ -22,6 +22,12 @@ resource "google_compute_instance" "vm_instance" {
   }
 }
 
+resource "google_data_fusion_instance" "basic_instance" {
+  name = "my-instance"
+  region = "europe-west1"
+  type = "BASIC"
+}
+
 resource "google_compute_network" "vpc_network" {
   name                    = "terraform-network"
   auto_create_subnetworks = "true"
